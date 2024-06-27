@@ -1,70 +1,184 @@
-# Getting Started with Create React App
+# Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Book store application
 
-## Available Scripts
+## Objective
 
-In the project directory, you can run:
+    Build an application that allows users to browse and search for books, view book details, add books to a shopping cart, and place an order.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    React JS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Completion Instructions
 
-### `npm test`
+### Functionality
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Must Have
 
-### `npm run build`
+- Build a ReactJS application with multiple pages/components, including Home, Book Listing, Book Details, Shopping Cart, and Checkout pages.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Implement features such as book search, book filtering, adding to cart, removing from cart, and order placement.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Nice to Have
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    List the bonus features or tasks mentioned in the Assignment, if any
 
-### `npm run eject`
+#### Pages
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    * Page: Home
+        Page Details:
+            Header: Links for pages Home, Book List, Cart
+            Banner: Heading, description and "Explore Books" button
+            Few products:   6 Product cards with link.
+        Navigation:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    * Page: Book List
+        Page Details:
+            Header: Links for pages Home, Book List, Cart
+            Book Items (title, subtitle, image, price), Search (by title, author), Filter (by price )
+        Navigation:
+            ."Book List" link in Header
+            ."Explore books" button in Home page
+            ."Back" button in Book Details page
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+    * Page: Book Details
+        Page Details:
+            Book detailed Info (title, subtitle, image, description, price), “Add to cart” Button, "Back" button
+        Navigation: Each book link in the book List page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    * Page: Cart
+        Page Details:
+            Cart Items (title, subtitle, image), “Remove” Button, Checkout Button, Order Summary
+        Navigation:
+            .‘Cart’ link in Header
+            . Back button in Checkout page
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+    * Page: Checkout
+        Page Details: ‘Back’ button, Order Form(personal details, summary, ‘Place Order’ button )
+        Navigation: Checkout button in Cart
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    * Page: Contact Us
+        Page Details: Address Card, Message form,  Footer
+        Navigation: Contact Us link in Header
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+### Guidelines to develop a project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### Must Have
 
-### Advanced Configuration
+~ Utilize GitHub
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Commit code regularly and commit messages should be clear
+- Include a README file explaining the project setup, usage instructions, and any additional information
+- The repo should be well organized and easy to understand.
+- The code should be clean, modular, and well-structured
+- The application should be visually appealing.
+- The application should handle all the errors.
 
-### Deployment
+#### Nice to Have
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    List the additional/suggested guidelines to follow while developing the project, mentioned in the Assignment, if any
 
-### `npm run build` fails to minify
+### Submission Instructions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Must Have
+
+    List the Instructions to follow while submitting the project mentioned in the Assignment, if any
+
+#### Nice to Have
+
+    List the suggested instructions to follow while submitting the project mentioned in the Assignment, if any
+
+## Technical Details
+
+### Routes
+
+| Page         | Route        | Path       |
+| ------------ | ------------ | ---------- |
+| Home         | Home         | /          |
+| Book List    | Book List    | /books     |
+| Book Details | Book Details | /books/:id |
+| Cart         | Cart         | /cart      |
+| Checkout     | Checkout     | /checkout  |
+| Not Found    | Not Found    | /not-found |
+
+### Routes & Components
+
+**Home**
+
+| Component | Details                                          | state              | API (IT Bookstore) |
+| --------- | ------------------------------------------------ | ------------------ | ------------------ |
+| Home      | Heading, Description, and "Explore books" button | -                  | -                  |
+| Header    | Links for pages Home, Book List, Cart            | (Context Consumer) | -                  |
+
+**Book List**
+| Component | Details | state | API (IT Bookstore) |
+|-------------|--------------------------------------------------|--------------------------------------|--------------------|
+| Book List | | apiStatus, booksData, priceRangeValue| /new |
+| Header | links for pages Home, Book List, Cart | - | - |
+| SearchInput | Search (by title, author) | searchInputValue | /search/{query} |
+| PriceRange | Filter (by price) | - | - |
+| BookItem | Book Items (title, subtitle, image, price) | - | - |
+| Loader | | - | - |
+| ErrorMessage| | - | - |
+
+**Book Details**
+
+| Component    | Details                                                                                                           | State                      | API (IT Bookstore) |
+| ------------ | ----------------------------------------------------------------------------------------------------------------- | -------------------------- | ------------------ |
+| BookDetails  | Book detailed Information - image, title, subtitle, price, description, etc., “Add to cart” Button, “Back” button | apiStatus, bookDetailsData | /books/{isbn}      |
+| Header       | links for pages Home, Book List, Cart                                                                             | -                          | -                  |
+| Loader       |                                                                                                                   | -                          | -                  |
+| ErrorMessage |                                                                                                                   | -                          | -                  |
+
+**Cart**
+
+| Components | Details                                                         | State              | API (IT Bookstore) |
+| ---------- | --------------------------------------------------------------- | ------------------ | ------------------ |
+| Cart       | Cart Items, “Remove” Button, Order Summary, “Checkout” Button   | (Context Consumer) | -                  |
+| Header     | links for pages Home, Book List, Cart                           | -                  | -                  |
+| CartItem   | Book Detailed Info (image, title, subtitle, price, description) | (Context Consumer) | -                  |
+
+**Checkout**
+
+| Components      | Details                                                                                                      | State                        | API (IT Bookstore) |
+| --------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------- | ------------------ |
+| Checkout        | “Back” button                                                                                                | (Context Consumer)           | -                  |
+| UserDetailsForm | Order Form - Personal Details - First Name, Last Name, Email, Mobile No. , Place Order Button, Order Summary | userDetails, isFormSubmitted | -                  |
+
+**Not Found**
+
+| Components | Details                               | State  | API (IT Bookstore)                    |
+| ---------- | ------------------------------------- | ------ | ------------------------------------- |
+| NotFound   | -                                     | -      | -                                     |
+| Header     | links for pages Home, Book List, Cart | Header | links for pages Home, Book List, Cart |
+
+**App**
+
+| Component | Details | State                                                                     | API (IT Bookstore) |
+| --------- | ------- | ------------------------------------------------------------------------- | ------------------ |
+| App       | -       | cartList (Context Provider), Context: cartList, addToCart, deleteFromCart | -                  |
+
+## Resources
+
+### Design files
+
+    Home, Books Lists, Book Details, Shopping Cart, Checkout
+    Reference: https://www.crossword.in/
+
+### APIs
+
+    Books, Book Details, Search
+    API reference: https://api.itbook.store/
+
+### Third-party packages
+
+    React Router (react-router-dom)
+    Icons (react-icons)
+    Loader (react-loader-spinner)
+    Range slider (rc-slider)
